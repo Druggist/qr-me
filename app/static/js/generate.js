@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".card-panel").addClass('open');
+	$(".card-panel").removeClass('slide-up');
 });
 
 $("#submit").click(function () {
@@ -18,7 +18,7 @@ $("#submit").click(function () {
 	});
 	
 	$("#qr img").remove();
-	$(".card-panel").removeClass('open');
+	$(".card-panel").addClass('slide-up');
 	setTimeout(function(){
 	$("form").addClass("hide");
 	$("#qr").removeClass("hide");
@@ -26,17 +26,17 @@ $("#submit").click(function () {
 	$("#qr img").removeAttr("style");
 	$("#qr img").addClass("materialboxed");
 	$('.materialboxed').materialbox();
-	$(".card-panel").addClass('open');
+	$(".card-panel").removeClass('slide-up');
 	},750);
 });
 
 $("#return").click(function () {
-	$(".card-panel").removeClass('open');
+	$(".card-panel").addClass('slide-up');
 	setTimeout(function(){
 		$("#qr img").remove();
 		$("form").removeClass("hide");
 		$("#qr").addClass("hide");
-		$(".card-panel").addClass('open');
+		$(".card-panel").removeClass('slide-up');
 	},750);
 });
 
