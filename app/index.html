@@ -10,7 +10,54 @@
     <meta name="description" content="Minimalistic webapp for generating qr codes."/>
     <meta name="keywords" content="QR CODES GENERATOR"/>
     <title>qr.me</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="static/css/magic.min.css" rel="stylesheet"/>
+    <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+    <link href="components/paper-color-picker/paper-color-circle.html" rel="import"/>
+    <link href="components/paper-color-picker/paper-color-picker.html" rel="import"/>
+    <link href="components/paper-color-picker/paper-color-input.html" rel="import"/>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card-panel row">
+            <div id="qr" class="col s12 hide">
+              <button id="return" type="button" name="return" class="btn waves-effect waves-light right">Return<i class="material-icons right">reply</i></button>
+            </div>
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="content" class="materialize-textarea"></textarea>
+                  <label for="content">Content</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <paper-color-input id="main" label="Main color" value="{&quot;red&quot;:0,&quot;green&quot;:0,&quot;blue&quot;:0}"></paper-color-input>
+                </div>
+                <div class="input-field col s12 m6">
+                  <paper-color-input id="bg" label="Background color" value="{&quot;red&quot;:255,&quot;green&quot;:255,&quot;blue&quot;:255}"></paper-color-input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="rounded" type="checkbox"/>
+                  <label for="rounded">Rounded corners</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12"></div>
+                <button id="submit" type="button" name="generate" class="btn waves-effect waves-light right">Generate<i class="material-icons right">send</i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/materialize/dist/js/materialize.min.js"></script>
+    <script src="static/js/kjua-0.1.1.min.js"></script>
+    <script src="static/js/generate.js"></script>
   </body>
 </html>
