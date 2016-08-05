@@ -101,18 +101,18 @@ gulp.task("watchHtml", function(done) {
 //////////////////////////////////////////
 // task to clear out all files and folders from build folder
 gulp.task("build:clean", function (cb) {
-	del(["build/**"], cb);
+	return del(["build/**"]. cb);
 });
 
 // task to create build directory for all files
 gulp.task("build:copy", ["build:clean"], function () {
 	return gulp.src("app/**/*")
-		.pipe(gulp.dest("build"));
+		.pipe(gulp.dest("build/"));
 });
 
 // task to remove unwanted build files
 gulp.task("build:remove", ["build:copy"], function (cb) {
-	del([
+	return del([
 		"build/bower_components/",
 		"build/src/",
 		"build/static/js/!(*.min.js)",
