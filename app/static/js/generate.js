@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $("#submit").click(function () {
-
+	if($("#submit").hasClass("disabled")) return;
 	var main = $("#main").val();
 	var bg = $("#bg").val();
 	var qr = kjua({
@@ -31,13 +31,24 @@ $("#submit").click(function () {
 });
 
 $("#return").click(function () {
-	$(".card-panel").addClass('slide-up');
+	$(".card-panel").addClass('slide-up'); 
 	setTimeout(function(){
 		$("#qr img").remove();
 		$("form").removeClass("hide");
 		$("#qr").addClass("hide");
 		$(".card-panel").removeClass('slide-up');
 	},750);
+});
+
+
+$('#content').bind('input propertychange', function() {
+    if(this.value.length) {
+    	$("#submit").removeClass("disabled");
+    	$("#submit").addClass("waves-effect");
+    } else {
+    	$("#submit").addClass("disabled"); 
+    	$("#submit").removeClass("waves-effect"); 
+	}
 });
 
 function rgb2hex(rgb){

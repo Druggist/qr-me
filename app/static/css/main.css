@@ -4178,7 +4178,8 @@ form p:last-child {
   border-right: 2px solid #1976D2;
   border-bottom: 2px solid #1976D2;
   transform: rotate(40deg);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transform-origin: 100% 100%; }
 
 [type="checkbox"]:checked:disabled + label:before {
@@ -4196,7 +4197,8 @@ form p:last-child {
   border-right: 2px solid #1976D2;
   border-bottom: none;
   transform: rotate(90deg);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transform-origin: 100% 100%; }
 
 [type="checkbox"]:indeterminate:disabled + label:before {
