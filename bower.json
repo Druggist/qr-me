@@ -19,5 +19,9 @@
     "paper-color-picker": "^0.9.2",
     "jquery": "^3.1.0",
     "materialize": "^0.97.7"
+  },
+  "resolutions": {
+    "paper-styles": "^1.1.4",
+    "web-animations-js": "^2.2.0"
   }
 }
